@@ -5,9 +5,8 @@ I felt that the optimization scene has gone fairly stale, and as such, I've deci
 
 ## Solution parsing
 
-A row of "=" is used to separate EXA's. The first row of each EXA is either GLOBAL or LOCAL, depending on it's starting MODE.
+A row of "=" is used to separate EXA's. The first row of each EXA is either GLOBAL or LOCAL, depending on it's starting MODE. Remember that order matters.
 
 # Note
-It will take me some time to upload all of my solutions. If you want me to get to a particular solution faster, just message me.
-
 Also, there are a few cases where I tie a record, but don't hold the subrecord (the other scores in the triplet). I will still post these. 
+There also a few levels missing, these are the ones I haven't at least tied yet.
