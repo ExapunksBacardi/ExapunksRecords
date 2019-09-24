@@ -10,5 +10,3 @@ A row of "=" is used to separate EXA's. The first row of each EXA is either GLOB
 # Note
 Also, there are a few cases where I tie a record, but don't hold the subrecord (the other scores in the triplet). I will still post these. 
 There also a few levels missing, these are the ones I haven't at least tied yet.
-
-Also, currently only the cycle levels are available as plain text. The size records are .solution files, and can be copied to your game-directory.
