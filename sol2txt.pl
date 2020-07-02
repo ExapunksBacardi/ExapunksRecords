@@ -81,17 +81,23 @@ for my $filename (@ARGV) {
 		die "Unknown version code: $head";
 	}
 
-	my ($size_limit, $puzzle_name) = @{$puzzles{$puzzle}};
+	# Unsolved, hacker battles, redshift, workshop
+	next if $solved != 3 || $wins || $sandbox || $puzzle !~ /^P/ ;
+	if (exists($puzzles{$puzzle})) {
+		my ($size_limit, $puzzle_name) = @{$puzzles{$puzzle}};
 
-	# Unsolved, hacker battles, oversize, redshift, workshop
-	next if $solved != 3 || $wins || $size > $size_limit || $sandbox || $puzzle !~ /^P/;
+		# Oversize
+		next if  $size > $size_limit ;
 
-	my $out = join "\n============\n", map "$MODE[$exas[3*$_+2]]\n$exas[3*$_+1]", 0..($#exas / 3);
-	my $out_file = "$puzzle_name/$cycles|$size|$activity";
-	say $out;
-	say "Save as $out_file? (y/n)";
-	if (<STDIN> =~ /^y/i) {
-		open my $fh, '>', $out_file;
-		print $fh $out;
+		my $out = join "\n============\n", map "$MODE[$exas[3*$_+2]]\n$exas[3*$_+1]", 0..($#exas / 3);
+		my $out_file = "$puzzle_name/$cycles|$size|$activity";
+		if (!-e $out_file) {
+			say $out;
+			say "Save as $out_file? (y/n)";
+			if (<STDIN> =~ /^y/i) {
+				open my $fh, '>', $out_file;
+				print $fh $out;
+			}
+		}
 	}
 }
