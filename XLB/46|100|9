@@ -46,7 +46,7 @@ REPL KILL
 COPY M F
 
 ==========
-
+LOCAL
 LINK 800
 GRAB 199
 
